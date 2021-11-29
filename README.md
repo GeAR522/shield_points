@@ -1,24 +1,13 @@
-# README
+Shield Points
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This will be a practise project to more fully learn the ins and outs of what is used in the PinPoint Stack.
 
-Things you may want to cover:
+This will be a slowly developed project, therefore features will added/changed as I learn.
 
-* Ruby version
+Final goal - submitting the github PR link will detect who the creator is, check certain aspects and assign as many points as necessary to the creator.
+Then update the leaderboard.
+Furthermore, I want to add the ability to check monthly totals.
 
-* System dependencies
+Currently, creating the basics of the site, adding in the points DB, making sure the CRUD system is fully functional.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+next step. Learn to add up the sub of the checkboxes and get each _questions_ partial to calc and show the subtotal, then have the questions total get saved to the DB.
