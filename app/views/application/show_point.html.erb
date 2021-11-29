@@ -1,0 +1,21 @@
+<html>
+<body>
+<div class="point">
+  <a href='/list/points'>Back to Points index</a>
+  <hr />
+  <h2 class="user" ><%= point.user %></h2>
+  <small class="meta">
+    <span class="point_total">Points: <%= point.point_total %></span>
+    <em class="created_at">Created on <%= point.create_at %></em>
+  </small>
+  <div class="questions">
+    <p class="question"><%= point.questions %></p>
+    <p class="github_url" ><%= point.github_url %></p>
+  </div>
+  <hr />
+  <form method="post" action="/delete_post/<%=point.id %>">
+    <input type='submit' value='Delete' />
+  </form>
+</div>
+</body>
+</html>
