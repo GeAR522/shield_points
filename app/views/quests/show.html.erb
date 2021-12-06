@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Total points:</strong>
+  <%= @quest.total_points %>
+</p>
+
+<p>
+  <strong>Review total:</strong>
+  <%= @quest.review_total %>
+</p>
+
+<p>
+  <strong>Testing total:</strong>
+  <%= @quest.testing_total %>
+</p>
+
+<p>
+  <strong>Housekeeping total:</strong>
+  <%= @quest.housekeeping_total %>
+</p>
+
+<p>
+  <strong>Productivity total:</strong>
+  <%= @quest.productivity_total %>
+</p>
+
+<p>
+  <strong>Meta total:</strong>
+  <%= @quest.meta_total %>
+</p>
+
+<%= link_to 'Edit', edit_quest_path(@quest) %> |
+<%= link_to 'Back', quests_path %>

@@ -1,0 +1,37 @@
+<html>
+ <body>
+
+  <div class="test">
+
+  <a href='/tests/new' >new</a>
+    <% @tests.each do |test| %>
+      <div class="point">
+        <h2 class="id">
+        <a href='/tests/<%= test.id  %>'>
+          <%= test.id  %>
+        </a>
+        </h2>
+        <small class="meta" >
+          <span class="point_total" > AoD: <%= test.automate_or_die  %> </span>
+          <br />
+          <span class="point_total" > 21st: <%= test.twenty_first_century_digital_boy %> </span>
+          <br />
+          <em class="created_at" >QID <%= test.questions_id %></em>
+          <br />
+          <em class="created_at" >Subtotal <%= test.subtotal %></em>
+       </small>
+<!--      <a href='/edit_point/<%#= test.id  %>'>Edit test</a>-->
+      </div>
+      <%#= form_with model: @tests, method: "delete" do |f| %>
+        <%#= f.submit "delete" %>
+      <%# end %>
+      <a href='/tests/<%=test.id %>/edit' >Edit</a>
+    <form method="post" action="/tests/<%=test.id%>">
+      <input type="hidden" name="_method" value="delete">
+      <input type='submit' value='Delete' name="commit" data-disable-with="delete"/>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+   <% end %>
+  </div>
+ </body>
+</html>

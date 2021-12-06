@@ -1,0 +1,29 @@
+<html>
+<body>
+<div class="point">
+  <a href='/points'>Back to Points index</a>
+  <hr />
+  <h2 class="user" ><%= @point.user %>. <%=@point.id %></h2>
+  <div class="questions">
+    <p class="github_url" >Github _URL : <%= @point.github_url %></p>
+  </div>
+  <small class="meta">
+    <span class="point_total">Points: <%= @point.point_total %></span>
+    <br />
+    <em class="created_at">Created on <%= @point.create_at %></em>
+  </small>
+
+  <hr />
+  <%= form_with model: @points, method: "delete" do |f| %>
+    <%= f.submit "delete" %>
+  <% end %>
+
+
+<!--  <form method="post" action="/points/<%#=@point.id %>">-->
+<!--    <input type="hidden" name="_method" value="delete">-->
+<!--    <input type='submit' value='Delete' />-->
+    <%#= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<!--  </form>-->
+</div>
+</body>
+</html>

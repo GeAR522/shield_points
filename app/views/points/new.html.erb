@@ -1,16 +1,21 @@
 <html>
 <body>
 <div class="back to list" >
-  <a href='list/points' >Back to Index</a>
+  <a href='/points' >Back to Index</a>
 </div>
-  <form method="post" action="/create_point">
-    <label>PIN</label>
-    <input name="pin" type='text' />
+<div class="errors">
+  <% @point.errors.each do |attribute, error| %>
+    <p class="error" style="color: red">
+      <%= attribute %>: <%= error %>
+    </p>
+  <% end %>
+</div>
+  <form method="post" action="/points" >
     <br />
     <label for="user">User :</label>
-    <input type="text" name='user' id="user" />
+    <input type="text" name='user' id="user" value="<%= @point.user %>" />
     <label for="github_url" >Github URL : </label>
-    <input type='text' name='github_url' id='github_url' />
+    <input type='text' name='github_url' id='github_url' value='<%= @point.github_url %>'/>
     <br />
     <label>Questions</label>
     <div class="questions">
@@ -21,11 +26,12 @@
       <%= render 'questions_meta' %>
     </div>
     <div class="point_total" >
-      <p class="result">result[waiting input]</p>
+      <input type="text" class="result" name="point_total" value='<%=@point.point_total %>'/>
     </div>
     <input type='submit' value="Add Points" />
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   </form>
+
 </body>
 </html>

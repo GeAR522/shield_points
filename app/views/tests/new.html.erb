@@ -1,0 +1,30 @@
+<html>
+<body>
+
+
+
+<section class="questions housekeeping">
+  <h3 class="questions section title" >Housekeeping</h3>
+
+  <%= form_with model: @test do |f| %>
+
+
+    <%= f.check_box :automate_or_die %>
+    <%= f.label :automate_or_die, "Automate or Die" %>
+    <br />
+    <br />
+
+    <%= f.check_box :twenty_first_century_digital_boy %>
+    <%= f.label :twenty_first_century_digital_boy, "21st Century Digital Boy" %>
+    <br />
+    <br />
+
+    <%= f.submit "yup" %>
+
+
+  <% end %>
+
+</section>
+
+</body>
+</html>

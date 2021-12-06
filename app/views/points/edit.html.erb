@@ -1,0 +1,39 @@
+<html>
+<body>
+<div class="back to list" >
+  <a href='/points' >Back to Index</a>
+</div>
+<div class="errors">
+  <% @point.errors.each do |attribute, error| %>
+    <p class="error" style="color: red">
+      <%= attribute %>: <%= error %>
+    </p>
+  <% end %>
+</div>
+  <form method="post" action="/points/<%= @point.id %>">
+    <br />
+    <label for="user">User :</label>
+    <input type="text" name='user' id="user" value='<%= @point.user %>' />
+    <label for="github_url" >Github URL : </label>
+    <input type='text' name='github_url' id='github_url' value='<%= @point.github_url %>'/>
+    <br />
+    <br />
+    <label>Questions</label>
+    <div class="questions">
+      <%= render 'questions_review' %>
+      <%= render 'questions_testing' %>
+      <%= render 'questions_housekeeping' %>
+      <%= render 'questions_productivity' %>
+      <%= render 'questions_meta' %>
+    </div>
+    <br />
+    <div class="point_total" >
+      <label for="point_total">Point Total:</label>
+      <input type="number" class="result" name="point_total" value='<%=@point.point_total %>'/>
+    </div>
+    <input type="hidden" name="_method" value="put">
+    <input type='submit' value="Adjust Points" />
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_points: 1
+  review_total: 1
+  testing_total: 1
+  housekeeping_total: 1
+  productivity_total: 1
+  meta_total: 1
+
+two:
+  total_points: 1
+  review_total: 1
+  testing_total: 1
+  housekeeping_total: 1
+  productivity_total: 1
+  meta_total: 1

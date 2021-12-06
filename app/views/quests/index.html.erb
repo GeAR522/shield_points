@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Total points</th>
+      <th>Review total</th>
+      <th>Testing total</th>
+      <th>Housekeeping total</th>
+      <th>Productivity total</th>
+      <th>Meta total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quests.each do |quest| %>
+      <tr>
+        <td><%= quest.total_points %></td>
+        <td><%= quest.review_total %></td>
+        <td><%= quest.testing_total %></td>
+        <td><%= quest.housekeeping_total %></td>
+        <td><%= quest.productivity_total %></td>
+        <td><%= quest.meta_total %></td>
+        <td><%= link_to 'Show', quest %></td>
+        <td><%= link_to 'Edit', edit_quest_path(quest) %></td>
+        <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quest', new_quest_path %>

@@ -1,0 +1,35 @@
+<html>
+<body>
+<div class="point">
+  <a href='/tests'>Back to Tests index</a>
+  <hr />
+  <h2 class="user" ><%=@test.id %></h2>
+  <div class="questions">
+    <p class="question_id" >Question ID : <%= @test.questions_id %>
+      <br />
+      Automate or Die : <%= @test.automate_or_die %> <br />
+      21st Century Digital Boy : <%= @test.twenty_first_century_digital_boy %>
+
+    </p>
+  </div>
+  <small class="meta">
+    <span class="subtotal">Points: <%= @test.subtotal %></span>
+    <br />
+  </small>
+
+  <hr />
+  <a href='/tests/<%=@test.id %>/edit' >Edit</a>
+
+  <%= form_with model: @tests, method: "delete" do |f| %>
+    <%= f.submit "delete" %>
+  <% end %>
+
+
+  <!--  <form method="post" action="/points/<%#=@point.id %>">-->
+  <!--    <input type="hidden" name="_method" value="delete">-->
+  <!--    <input type='submit' value='Delete' />-->
+  <%#= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <!--  </form>-->
+</div>
+</body>
+</html>
